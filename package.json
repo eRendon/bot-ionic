@@ -16,7 +16,8 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "now-build": "npm run build && mv build dist"
   },
   "dependencies": {
     "@nestjs/common": "^6.0.0",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@nestjs/testing": "^6.0.0",
+    "@now/node": "^1.0.0",
     "@types/dotenv": "^6.1.1",
     "@types/express": "4.16.1",
     "@types/jest": "24.0.11",
@@ -40,11 +42,12 @@
     "supertest": "4.0.2",
     "telegraf": "^3.32.0",
     "ts-jest": "24.0.2",
+    "ts-loader": "^6.1.0",
     "ts-node": "8.1.0",
     "tsc-watch": "2.2.1",
     "tsconfig-paths": "3.8.0",
     "tslint": "5.16.0",
-    "typescript": "3.4.3"
+    "typescript": "^3.4.3"
   },
   "jest": {
     "moduleFileExtensions": [

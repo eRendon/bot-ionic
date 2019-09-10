@@ -11,13 +11,13 @@ config();
 // @ts-ignore
 const app = new Telegraf(configure.secret_token);
 app.telegram.getMe().then(
-  (botInfo): any => {
+  (botInfo: any): any => {
     console.log('botInfo', botInfo);
     app.options.username = botInfo.username;
   },
 );
 // bot.use(morgan('combined'))
-const process_message = (message, cb) =>
+const process_message = (message: any, cb: any) =>
   new Promise((resolve, reject) => {
     const response = cb(message);
 
@@ -28,12 +28,12 @@ const process_message = (message, cb) =>
     return reject();
   });
 
-app.hears(/^tutoriales.*/i, async ctx => {
+app.hears(/^tutoriales.*/i, async (ctx: any) => {
   console.log(ctx);
   await ctx.reply('Hey there');
 });
 
-app.on('text', async ctx => {
+app.on('text', async (ctx: any) => {
   console.log('ctx ----------->', ctx);
   try {
     if (ctx.message.text === '/tutoriales') {
