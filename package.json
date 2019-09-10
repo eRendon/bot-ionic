@@ -1,0 +1,17 @@
+{
+  "name": "bot",
+  "version": "1.0.0",
+  "description": "bot telegram ionic",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "bot --output public",
+    "dev": "nodemon index.js"
+  },
+  "author": "Alexander Rendon",
+  "license": "ISC",
+  "dependencies": {
+    "morgan": "^1.9.1",
+    "telegraf": "^3.32.0"
+  }
+}
