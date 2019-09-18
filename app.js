@@ -125,4 +125,4 @@ const commands = [
   "capacitor"
 ];
 
-app.listen(3000, () => console.log("Telegram bot is listening on port 3000!"));
+app.listen(8000, () => console.log("Telegram bot is listening on port 3000!"));
