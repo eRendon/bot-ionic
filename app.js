@@ -12,16 +12,14 @@ app.use(
 );
 const token = require("./config.json");
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 const host = process.env.HOST;
 const externalUrl =
   process.env.CUSTOM_ENV_VARIABLE || "https://my-app.herokuapp.com";
-const bot = new TelegramBot(token.secret_token, {
-  webHook: { port: port, host: host }
-});
+const bot = new TelegramBot(token.secret_token, { polling: true });
 // const bot = new TelegramBot(token.secret_token, { polling: true });
 app.use("/bot", router);
-bot.setWebHook(externalUrl + ":443/bot" + token.secret_token);
+// bot.setWebHook(externalUrl + ":443/bot" + token.secret_token);
 
 // function get_forecast(city) {
 //   let new_url =
@@ -125,4 +123,4 @@ const commands = [
   "capacitor"
 ];
 
-app.listen(8000, () => console.log("Telegram bot is listening on port 3000!"));
+app.listen(3000, () => console.log("Telegram bot is listening on port 3000!"));
