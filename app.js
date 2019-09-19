@@ -68,9 +68,7 @@ bot.on("message", async msg => {
       "Hola " +
         nameNewMember +
         ", bienvenid@ al grupo " +
-        +"" +
         chatitle +
-        "" +
         ". Soy ionic-bot y estoy para ayudarte. Puedes escribirme al privado 'comandos' para ver la lista de acciones disponibles. Podrás encontrar mucha ayuda para iniciar en este fabuloso mundo"
     );
   }
