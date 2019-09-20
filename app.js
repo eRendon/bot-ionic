@@ -16,7 +16,12 @@ const port = process.env.PORT || 8000;
 const host = process.env.HOST;
 const externalUrl =
   process.env.CUSTOM_ENV_VARIABLE || "https://my-app.herokuapp.com";
-const bot = new TelegramBot(token.secret_token, { polling: true });
+const bot = new TelegramBot(token.secret_token, {
+  polling: true,
+  updates: {
+    enabled: true
+  }
+});
 // const bot = new TelegramBot(token.secret_token, { polling: true });
 app.use("/bot", router);
 // bot.setWebHook(externalUrl + ":443/bot" + token.secret_token);
@@ -55,10 +60,12 @@ bot.onText(/\/echo (.+)/, async (msg, match) => {
 // Listen for any kind of message. There are different kinds of
 // messages.
 bot.on("message", async msg => {
-  console.log("msg------->", msg);
+  console.log("msg------->", msg.text);
   const Hi = ["hola", "hi", "Hello", "buenas"];
+  let chatMsg = null;
+  if (msg.text) chatMsg = msg.text;
   const chatId = msg.chat.id;
-  const chatitle = msg.chat.title;
+  const chatTitle = msg.chat.title;
 
   if (msg.new_chat_members !== undefined) {
     const nameNewMember = msg.new_chat_member.first_name;
@@ -68,11 +75,12 @@ bot.on("message", async msg => {
       "Hola " +
         nameNewMember +
         ", bienvenid@ al grupo " +
-        chatitle +
+        chatTitle +
         ". Soy ionic-bot y estoy para ayudarte. Puedes escribirme al privado 'comandos' para ver la lista de acciones disponibles. Podrás encontrar mucha ayuda para iniciar en este fabuloso mundo"
     );
   }
-  if (msg.text) {
+  if (chatMsg) {
+    console.log(chatMsg);
     Hi.forEach(async greet => {
       if (
         msg.text
@@ -81,7 +89,7 @@ bot.on("message", async msg => {
           .indexOf(greet) === 0
       ) {
         await bot.sendMessage(
-          msg.chat.id,
+          chatId,
           `Bienvenido ${msg.from.first_name}. Escribe "comandos" para ver la lita de comandos`
         );
       }
@@ -111,6 +119,15 @@ bot.onText(/\/*comandos/, msg => {
   commands.forEach(async command => {
     await bot.sendMessage(msg.chat.id, command);
   });
+});
+
+bot.onText(/\/echo (.+)/, async (msg, match) => {
+  console.log(msg);
+  const chatId = msg.chat.id;
+  const resp = match[1]; // the captured "whatever"
+
+  // send back the matched "whatever" to the chat
+  bot.sendMessage(chatId, resp);
 });
 
 const commands = [
