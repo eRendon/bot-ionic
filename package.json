@@ -82,6 +82,10 @@
     "type": "git",
     "url": "git+https://github.com/eRendon/bot-ionic.git"
   },
+  "keywords": [
+    "bot-ionic",
+    "heroku"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
