@@ -1,6 +1,6 @@
 module.exports = msg => {
     console.log('documentos', msg)
-  if (msg.text === "documentos") return docs;
+  if (msg === "documentos") return docs;
 };
 
 const docs = [

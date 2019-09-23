@@ -8,7 +8,7 @@ const arrayControllers = [
 module.exports = function(msg, bot) {
   let arrayResponse = [];
   arrayControllers.some(controller => {
-    let arrayResponseController = controller(msg.toLowerCase());
+    let arrayResponseController = controller(msg.text.toLowerCase());
     console.log('arrayResponseController', arrayResponseController)
     if (arrayResponseController) {
       arrayResponse = arrayResponseController;

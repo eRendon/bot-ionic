@@ -1,6 +1,6 @@
 module.exports = msg => {
   console.log("boilersboilers", msg);
-  if (msg.text === "boilers") return boilers;
+  if (msg === "boilers") return boilers;
 };
 
 const boilers = [

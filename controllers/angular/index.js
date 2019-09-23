@@ -1,5 +1,5 @@
 module.exports = msg => {
-  if (msg.text === "tutoriales angular") return tutorialsAngular;
+  if (msg === "tutoriales angular") return tutorialsAngular;
 };
 
 const tutorialsAngular = [
