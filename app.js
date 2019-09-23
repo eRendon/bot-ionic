@@ -115,8 +115,6 @@ const commands = [
   "Estos son nuestros comandos disponibles:",
   "tutoriales angular",
   "tutoriales capacitor",
-  "cursos",
-  "capacitor",
   "boilers",
   "documentos"
 ];
