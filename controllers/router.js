@@ -3,9 +3,10 @@ const router = express.Router();
 const axios = require("axios");
 const token = require("../config.json");
 let telegram_url =
-    "https://api.telegram.org/bot" + token.secret_token + "/sendMessage";
+    "https://api.telegram.org/bot" + token.secret_token + "/bot";
 router.post("/ionic", function(req, res) {
-
+    console.log(req)
+    console.log(res)
     const  message  = req.body;
     console.log('req', message)
     let reply = "Welcome to telegram weather bot";
