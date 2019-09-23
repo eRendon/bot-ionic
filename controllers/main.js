@@ -1,13 +1,10 @@
-const arrayControllers = [require("./comands"), require("./tutorials")];
+const arrayControllers = [require("./comands"), require("./tutorials"), require("./boilers"), require("./documentations")];
 
 module.exports = function(msg, bot) {
   let arrayResponse = [];
   arrayControllers.some(controller => {
-    console.log("controller", controller);
     let arrayResponseController = controller(msg);
-    console.log("arrayResponseController", arrayResponseController);
     if (arrayResponseController[0]) {
-      console.log("arrayResponse", arrayResponse);
       arrayResponse = arrayResponseController;
       return true;
     } else {
@@ -17,7 +14,6 @@ module.exports = function(msg, bot) {
   });
 
   arrayResponse.map(async response => {
-    console.log("response", response);
     await bot.sendMessage(msg.chat.id, response);
   });
 };

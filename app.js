@@ -26,30 +26,10 @@ const options = {
     enabled: true
   }
 };
-const TOKEN = process.env.TELEGRAM_TOKEN;
-const url = process.env.APP_URL || 'https://ionic-bot.herokuapp.com:443';
+const url = process.env.APP_URL || "https://ionic-bot.herokuapp.com:443";
 const bot = new TelegramBot(token.secret_token, options);
-// const bot = new TelegramBot(token.secret_token, { polling: true });
 app.use("/bot", router);
 bot.setWebHook(`${url}/bot${token.secret_token}`);
-
-// function get_forecast(city) {
-//   let new_url =
-//     openWeatherUrl + city + "&appid=" + process.env.OPENWEATHER_API_KEY;
-//   return axios
-//     .get(new_url)
-//     .then(response => {
-//       let temp = response.data.main.temp;
-//       //converts temperature from kelvin to celsuis
-//       temp = Math.round(temp - 273.15);
-//       let city_name = response.data.name;
-//       let resp = "It's " + temp + " degrees in " + city_name;
-//       return resp;
-//     })
-//     .catch(error => {
-//       console.log(error);
-//     });
-// }
 
 bot.onText(/\/echo (.+)/, async (msg, match) => {
   console.log("msg", msg);
@@ -111,12 +91,6 @@ bot.onText(/\/start/, async msg => {
   );
 });
 
-// bot.onText(/\/*tutoriales angular/, msg => {
-//   tutorialsAngular.forEach(async angular => {
-//     await bot.sendMessage(msg.chat.id, angular);
-//   });
-// });
-
 bot.onText(/\/*tutoriales/, async msg => {
   mainController(msg, bot);
   // await bot.sendMessage(msg.chat.id, `Bienvenido ${msg.chat.username}. Por favor, escribe al privado "comandos" y te contaré qué puedes aprender de mi`);
@@ -142,9 +116,7 @@ const commands = [
   "tutoriales angular",
   "tutoriales capacitor",
   "cursos",
-  "capacitor"
+  "capacitor",
+  "boilers",
+  "documentos"
 ];
-
-// app.listen(port || 5000, () =>
-//   console.log(`"Telegram bot is listening on port ${process.env.PORT}!`)
-// );
