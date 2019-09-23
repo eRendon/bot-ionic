@@ -13,7 +13,6 @@ app.use(
 // socket = io.listen(process.env.PORT);
 const token = require("./config.json");
 const options = {
-  polling: true,
   webHook: {
     // Port to which you should bind is assigned to $PORT variable
     // See: https://devcenter.heroku.com/articles/dynos#local-environment-variables
@@ -27,8 +26,6 @@ const options = {
   }
 };
 const TOKEN = process.env.TELEGRAM_TOKEN
-const port = process.env.PORT || 8000;
-const host = process.env.HOST;
 const url = process.env.APP_URL || "https://<app-name>.herokuapp.com:443";
 const bot = new TelegramBot(token.secret_token, options);
 // const bot = new TelegramBot(token.secret_token, { polling: true });
