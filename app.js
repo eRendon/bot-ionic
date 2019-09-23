@@ -10,7 +10,7 @@ app.use(
     extended: true
   })
 );
-socket = io.listen(process.env.PORT);
+// socket = io.listen(process.env.PORT);
 const token = require("./config.json");
 
 const port = process.env.PORT || 8000;
