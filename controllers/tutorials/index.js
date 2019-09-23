@@ -3,7 +3,7 @@ module.exports = msg => {
     if (msg.text === "tutoriales capacitor") {
         return tutorialsCapacitor;
     } else {
-        return []
+        return false
     }
 };
 const tutorialsCapacitor = [

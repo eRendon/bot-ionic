@@ -9,11 +9,12 @@ module.exports = function(msg, bot) {
   let arrayResponse = [];
   arrayControllers.some(controller => {
     let arrayResponseController = controller(msg);
+    console.log('arrayResponseController', arrayResponseController)
     if (arrayResponseController) {
       arrayResponse = arrayResponseController;
       return true;
     } else {
-      console.log(arrayResponseController.length);
+      console.log('vergo', arrayResponseController);
       return false;
     }
   });

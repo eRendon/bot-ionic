@@ -26,6 +26,9 @@ const options = {
     enabled: true
   }
 };
+// const options = {
+//  polling: true
+// };
 const url = process.env.APP_URL || "https://ionic-bot.herokuapp.com:443";
 const bot = new TelegramBot(token.secret_token, options);
 app.use("/bot", router);
@@ -47,7 +50,6 @@ bot.onText(/\/echo (.+)/, async (msg, match) => {
 // Listen for any kind of message. There are different kinds of
 // messages.
 bot.on("message", async msg => {
-  console.log("msg------->", msg);
   const Hi = ["hola", "hi", "Hello", "buenas"];
   let chatMsg = null;
   if (msg.text) chatMsg = msg.text;
@@ -92,6 +94,17 @@ bot.onText(/\/start/, async msg => {
 });
 
 bot.onText(/\/*tutoriales/, async msg => {
+  console.log('msgmsgmsg', msg)
+  mainController(msg, bot);
+  // await bot.sendMessage(msg.chat.id, `Bienvenido ${msg.chat.username}. Por favor, escribe al privado "comandos" y te contaré qué puedes aprender de mi`);
+});
+bot.onText(/\/*documentos/, async msg => {
+  console.log('msgmsgmsg', msg)
+  mainController(msg, bot);
+  // await bot.sendMessage(msg.chat.id, `Bienvenido ${msg.chat.username}. Por favor, escribe al privado "comandos" y te contaré qué puedes aprender de mi`);
+});
+bot.onText(/\/*boilers/, async msg => {
+  console.log('msgmsgmsg', msg)
   mainController(msg, bot);
   // await bot.sendMessage(msg.chat.id, `Bienvenido ${msg.chat.username}. Por favor, escribe al privado "comandos" y te contaré qué puedes aprender de mi`);
 });
