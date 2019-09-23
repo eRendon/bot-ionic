@@ -80,27 +80,27 @@ bot.onText(/\/start/, async msg => {
   );
 });
 
-bot.onText(/\/*tutoriales/, async msg => {
+bot.onText(/\/*/, async msg => {
   console.log("msgmsgmsg", msg);
   mainController(msg, bot);
   // await bot.sendMessage(msg.chat.id, `Bienvenido ${msg.chat.username}. Por favor, escribe al privado "comandos" y te contaré qué puedes aprender de mi`);
 });
-bot.onText(/\/*ocumentos/, async msg => {
-  console.log("msgmsgmsg", msg);
-  mainController(msg, bot);
-  // await bot.sendMessage(msg.chat.id, `Bienvenido ${msg.chat.username}. Por favor, escribe al privado "comandos" y te contaré qué puedes aprender de mi`);
-});
-bot.onText(/\/*boilers/, async msg => {
-  console.log("msgmsgmsg", msg);
-  mainController(msg, bot);
-  // await bot.sendMessage(msg.chat.id, `Bienvenido ${msg.chat.username}. Por favor, escribe al privado "comandos" y te contaré qué puedes aprender de mi`);
-});
-
-bot.onText(/\/*comandos/, msg => {
-  commands.forEach(async command => {
-    await bot.sendMessage(msg.chat.id, command);
-  });
-});
+// bot.onText(/\/*ocumentos/, async msg => {
+//   console.log("msgmsgmsg", msg);
+//   mainController(msg, bot);
+//   // await bot.sendMessage(msg.chat.id, `Bienvenido ${msg.chat.username}. Por favor, escribe al privado "comandos" y te contaré qué puedes aprender de mi`);
+// });
+// bot.onText(/\/*boilers/, async msg => {
+//   console.log("msgmsgmsg", msg);
+//   mainController(msg, bot);
+//   // await bot.sendMessage(msg.chat.id, `Bienvenido ${msg.chat.username}. Por favor, escribe al privado "comandos" y te contaré qué puedes aprender de mi`);
+// });
+//
+// bot.onText(/\/*comandos/, msg => {
+//   commands.forEach(async command => {
+//     await bot.sendMessage(msg.chat.id, command);
+//   });
+// });
 
 bot.onText(/\/echo (.+)/, async (msg, match) => {
   console.log(msg);
