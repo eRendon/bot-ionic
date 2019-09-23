@@ -96,11 +96,11 @@ bot.onText(/\/*/, async msg => {
 //   // await bot.sendMessage(msg.chat.id, `Bienvenido ${msg.chat.username}. Por favor, escribe al privado "comandos" y te contaré qué puedes aprender de mi`);
 // });
 //
-// bot.onText(/\/*comandos/, msg => {
-//   commands.forEach(async command => {
-//     await bot.sendMessage(msg.chat.id, command);
-//   });
-// });
+bot.onText(/\/*comandos/, msg => {
+  commands.forEach(async command => {
+    await bot.sendMessage(msg.chat.id, command);
+  });
+});
 
 bot.onText(/\/echo (.+)/, async (msg, match) => {
   console.log(msg);
