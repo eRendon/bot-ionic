@@ -30,7 +30,7 @@ const url = process.env.APP_URL || "https://<app-name>.herokuapp.com:443";
 const bot = new TelegramBot(token.secret_token, options);
 // const bot = new TelegramBot(token.secret_token, { polling: true });
 app.use("/bot", router);
-bot.setWebHook(`${url}/bot${TOKEN}`);
+bot.setWebHook(`${url}/bot/ionic${TOKEN}`);
 
 // function get_forecast(city) {
 //   let new_url =
@@ -144,6 +144,6 @@ const commands = [
   "capacitor"
 ];
 
-// app.listen(process.env.PORT || 5000, () =>
-//   console.log(`"Telegram bot is listening on port ${process.env.PORT}!`)
-// );
+app.listen(process.env.PORT || 5000, () =>
+  console.log(`"Telegram bot is listening on port ${process.env.PORT}!`)
+);

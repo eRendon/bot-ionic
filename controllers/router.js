@@ -3,7 +3,7 @@ const router = express.Router();
 const axios = require("axios");
 const token = require("../config.json");
 let telegram_url =
-    "https://api.telegram.org/bot" + token.secret_token + "/bot";
+    "https://api.telegram.org/bot" + token.secret_token + "/sendMessage";
 router.post("/ionic", function(req, res) {
     console.log(req)
     console.log(res)
