@@ -9,7 +9,7 @@ module.exports = function(msg, bot) {
   let arrayResponse = [];
   arrayControllers.some(controller => {
     let arrayResponseController = controller(msg);
-    if (arrayResponseController[0]) {
+    if (arrayResponseController) {
       arrayResponse = arrayResponseController;
       return true;
     } else {
