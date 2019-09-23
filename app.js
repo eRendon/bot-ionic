@@ -27,7 +27,7 @@ const options = {
   }
 };
 const TOKEN = process.env.TELEGRAM_TOKEN;
-const url = process.env.APP_URL || "https://<app-name>.herokuapp.com:443";
+const url = process.env.APP_URL;
 const bot = new TelegramBot(token.secret_token, options);
 // const bot = new TelegramBot(token.secret_token, { polling: true });
 app.use("/bot", router);
