@@ -10,12 +10,13 @@ app.use(
     extended: true
   })
 );
+socket = io.listen(process.env.PORT);
 const token = require("./config.json");
 
 const port = process.env.PORT || 8000;
 const host = process.env.HOST;
 const externalUrl =
-  process.env.CUSTOM_ENV_VARIABLE || "https://my-app.herokuapp.com";
+  process.env.OPENWEATHER_API_URL || "https://my-app.herokuapp.com";
 const bot = new TelegramBot(token.secret_token, {
   polling: true,
   updates: {
@@ -24,7 +25,7 @@ const bot = new TelegramBot(token.secret_token, {
 });
 // const bot = new TelegramBot(token.secret_token, { polling: true });
 app.use("/bot", router);
-// bot.setWebHook(externalUrl + ":443/bot" + token.secret_token);
+bot.setWebHook(externalUrl + "/bot" + token.secret_token);
 
 // function get_forecast(city) {
 //   let new_url =
