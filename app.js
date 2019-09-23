@@ -12,11 +12,12 @@ app.use(
 );
 // socket = io.listen(process.env.PORT);
 const token = require("./config.json");
+const port = process.env.PORT;
 const options = {
   webHook: {
     // Port to which you should bind is assigned to $PORT variable
     // See: https://devcenter.heroku.com/articles/dynos#local-environment-variables
-    port: process.env.PORT
+    port: port
     // you do NOT need to set up certificates since Heroku provides
     // the SSL certs already (https://<app-name>.herokuapp.com)
     // Also no need to pass IP because on Heroku you need to bind to 0.0.0.0
@@ -25,12 +26,12 @@ const options = {
     enabled: true
   }
 };
-const TOKEN = process.env.TELEGRAM_TOKEN
+const TOKEN = process.env.TELEGRAM_TOKEN;
 const url = process.env.APP_URL || "https://<app-name>.herokuapp.com:443";
 const bot = new TelegramBot(token.secret_token, options);
 // const bot = new TelegramBot(token.secret_token, { polling: true });
 app.use("/bot", router);
-bot.setWebHook(`${url}/bot/ionic${TOKEN}`);
+bot.setWebHook(`${url}/bot${TOKEN}`);
 
 // function get_forecast(city) {
 //   let new_url =
@@ -144,6 +145,6 @@ const commands = [
   "capacitor"
 ];
 
-app.listen(process.env.PORT || 5000, () =>
-  console.log(`"Telegram bot is listening on port ${process.env.PORT}!`)
-);
+// app.listen(port || 5000, () =>
+//   console.log(`"Telegram bot is listening on port ${process.env.PORT}!`)
+// );
