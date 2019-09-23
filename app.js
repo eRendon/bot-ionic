@@ -31,7 +31,7 @@ const url = process.env.APP_URL || 'https://ionic-bot.herokuapp.com:443';
 const bot = new TelegramBot(token.secret_token, options);
 // const bot = new TelegramBot(token.secret_token, { polling: true });
 app.use("/bot", router);
-bot.setWebHook(`${url}/bot${token}`);
+bot.setWebHook(`${url}/bot${token.secret_token}`);
 
 // function get_forecast(city) {
 //   let new_url =
