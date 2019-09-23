@@ -1,6 +1,6 @@
 const arrayControllers = [
-  require("./comands"),
-  require("./tutorials"),
+  require("./angular"),
+  require("./capacitor"),
   require("./boilers"),
   require("./documentations")
 ];
@@ -8,7 +8,7 @@ const arrayControllers = [
 module.exports = function(msg, bot) {
   let arrayResponse = [];
   arrayControllers.some(controller => {
-    let arrayResponseController = controller(msg);
+    let arrayResponseController = controller(msg.toLowerCase());
     console.log('arrayResponseController', arrayResponseController)
     if (arrayResponseController) {
       arrayResponse = arrayResponseController;

@@ -34,19 +34,6 @@ const bot = new TelegramBot(token.secret_token, options);
 app.use("/bot", router);
 bot.setWebHook(`${url}/bot${token.secret_token}`);
 
-bot.onText(/\/echo (.+)/, async (msg, match) => {
-  console.log("msg", msg);
-  // 'msg' is the received Message from Telegram
-  // 'match' is the result of executing the regexp above on the text content
-  // of the message
-
-  const chatId = msg.chat.id;
-  const resp = match[1]; // the captured "whatever"
-
-  // send back the matched "whatever" to the chat
-  await bot.sendMessage(chatId, resp);
-});
-
 // Listen for any kind of message. There are different kinds of
 // messages.
 bot.on("message", async msg => {
@@ -94,17 +81,17 @@ bot.onText(/\/start/, async msg => {
 });
 
 bot.onText(/\/*tutoriales/, async msg => {
-  console.log('msgmsgmsg', msg)
+  console.log("msgmsgmsg", msg);
   mainController(msg, bot);
   // await bot.sendMessage(msg.chat.id, `Bienvenido ${msg.chat.username}. Por favor, escribe al privado "comandos" y te contaré qué puedes aprender de mi`);
 });
 bot.onText(/\/*documentos/, async msg => {
-  console.log('msgmsgmsg', msg)
+  console.log("msgmsgmsg", msg);
   mainController(msg, bot);
   // await bot.sendMessage(msg.chat.id, `Bienvenido ${msg.chat.username}. Por favor, escribe al privado "comandos" y te contaré qué puedes aprender de mi`);
 });
 bot.onText(/\/*boilers/, async msg => {
-  console.log('msgmsgmsg', msg)
+  console.log("msgmsgmsg", msg);
   mainController(msg, bot);
   // await bot.sendMessage(msg.chat.id, `Bienvenido ${msg.chat.username}. Por favor, escribe al privado "comandos" y te contaré qué puedes aprender de mi`);
 });
