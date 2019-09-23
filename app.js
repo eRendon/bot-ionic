@@ -85,7 +85,7 @@ bot.onText(/\/*tutoriales/, async msg => {
   mainController(msg, bot);
   // await bot.sendMessage(msg.chat.id, `Bienvenido ${msg.chat.username}. Por favor, escribe al privado "comandos" y te contaré qué puedes aprender de mi`);
 });
-bot.onText(/\/*documentos/, async msg => {
+bot.onText(/\/*ocumentos/, async msg => {
   console.log("msgmsgmsg", msg);
   mainController(msg, bot);
   // await bot.sendMessage(msg.chat.id, `Bienvenido ${msg.chat.username}. Por favor, escribe al privado "comandos" y te contaré qué puedes aprender de mi`);
