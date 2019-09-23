@@ -67,7 +67,7 @@ bot.onText(/\/echo (.+)/, async (msg, match) => {
 // Listen for any kind of message. There are different kinds of
 // messages.
 bot.on("message", async msg => {
-  console.log("msg------->", msg.text);
+  console.log("msg------->", msg);
   const Hi = ["hola", "hi", "Hello", "buenas"];
   let chatMsg = null;
   if (msg.text) chatMsg = msg.text;
