@@ -116,5 +116,6 @@ const commands = [
   "tutoriales angular",
   "tutoriales capacitor",
   "boilers",
-  "documentos"
+  "documentos",
+  "consejos"
 ];
