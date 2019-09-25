@@ -1,5 +1,5 @@
 module.exports = msg => {
-    if (msg === 'consejos') return tips;
+    if (msg === 'tips') return tips;
 }
 
 const tips = [

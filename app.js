@@ -117,5 +117,5 @@ const commands = [
   "tutoriales capacitor",
   "boilers",
   "documentos",
-  "consejos"
+  "tips"
 ];
