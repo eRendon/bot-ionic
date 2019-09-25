@@ -2,7 +2,8 @@ const arrayControllers = [
   require("./angular"),
   require("./capacitor"),
   require("./boilers"),
-  require("./documentations")
+  require("./documentations"),
+  require("./tips")
 ];
 
 module.exports = function(msg, bot) {
