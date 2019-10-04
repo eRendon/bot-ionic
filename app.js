@@ -76,7 +76,7 @@ bot.on("message", async msg => {
 bot.onText(/\/start/, async msg => {
   await bot.sendMessage(
     msg.chat.id,
-    `Bienvenido ${msg.from.first_name}. Escribe "comandos" en mi privado para ver la lita de comandos`
+    `Bienvenido ${msg.from.first_name}. Escribe "comandos" en mi privado para ver la lista de comandos`
   );
 });
 
@@ -115,6 +115,7 @@ const commands = [
   "Estos son nuestros comandos disponibles:",
   "tutoriales angular",
   "tutoriales capacitor",
+  "tutoriales vue",
   "boilers",
   "documentos",
   "tips"

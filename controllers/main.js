@@ -3,7 +3,8 @@ const arrayControllers = [
   require("./capacitor"),
   require("./boilers"),
   require("./documentations"),
-  require("./tips")
+  require("./tips"),
+  require("./vue")
 ];
 
 module.exports = function(msg, bot) {
