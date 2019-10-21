@@ -25,5 +25,5 @@ module.exports = function(msg, bot) {
 };
 
 const errors = [
-  'No hay tutoriales para este comando, por favor, escribe "comandos" para ver lo que puedes aprender de mi'
+  'No hay tutoriales para este comando, por favor, escribe "comandos" para ver la ayuda disponible'
 ];
