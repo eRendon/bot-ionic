@@ -4,5 +4,6 @@ module.exports = msg => {
 
 const tutorialsAngular = [
   "Pronto agregaremos los mejores tutoriales de ionic, mientras tanto, disfruta de estos super tutoriales https://medium.com/ngxs/ngxs-facade-3aa90c41497b",
-  "https://www.youtube.com/watch?v=REgMMe2fYKA"
+  "https://www.youtube.com/watch?v=REgMMe2fYKA",
+  "https://www.youtube.com/watch?v=u4FWNL0PBBo"
 ];
