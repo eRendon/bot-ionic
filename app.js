@@ -110,10 +110,4 @@ bot.onText(/\/echo (.+)/, async (msg, match) => {
 });
 
 const commands =
-  '"Estos son nuestros comandos disponibles:",\n' +
-  '  "tutoriales angular",\n' +
-  '  "tutoriales capacitor",\n' +
-  '  "tutoriales vue",\n' +
-  '  "boilers",\n' +
-  '  "documentos",\n' +
-  '  "tips"';
+  "Estos son nuestros comandos disponibles: \n tutoriales angular \n tutoriales capacitor \n tutoriales vue \n boilers \n documentos \n tips";
