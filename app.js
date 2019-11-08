@@ -97,7 +97,7 @@ bot.onText(/\/*/, async msg => {
 // });
 //
 bot.onText(/\/*comandos/, async msg => {
-    await bot.sendMessage(msg.chat.id, commands);
+  await bot.sendMessage(msg.chat.id, commands);
 });
 
 bot.onText(/\/echo (.+)/, async (msg, match) => {
@@ -109,12 +109,11 @@ bot.onText(/\/echo (.+)/, async (msg, match) => {
   bot.sendMessage(chatId, resp);
 });
 
-const commands = [
-  "Estos son nuestros comandos disponibles:",
-  "tutoriales angular",
-  "tutoriales capacitor",
-  "tutoriales vue",
-  "boilers",
-  "documentos",
-  "tips"
-];
+const commands =
+  '"Estos son nuestros comandos disponibles:",\n' +
+  '  "tutoriales angular",\n' +
+  '  "tutoriales capacitor",\n' +
+  '  "tutoriales vue",\n' +
+  '  "boilers",\n' +
+  '  "documentos",\n' +
+  '  "tips"';
