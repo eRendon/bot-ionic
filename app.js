@@ -46,14 +46,14 @@ bot.on("message", async msg => {
   if (msg.new_chat_members !== undefined) {
     const nameNewMember = msg.new_chat_member.first_name;
 
-    await bot.sendMessage(
-      chatId,
-      "Hola " +
-        nameNewMember +
-        ", bienvenid@ al grupo " +
-        chatTitle +
-        ". Soy ionic-bot y estoy para ayudarte. Puedes escribirme al privado 'comandos' para ver la lista de acciones disponibles. Podrás encontrar mucha ayuda para iniciar en este fabuloso mundo"
-    );
+    // await bot.sendMessage(
+    //   chatId,
+    //   "Hola " +
+    //     nameNewMember +
+    //     ", bienvenid@ al grupo " +
+    //     chatTitle +
+    //     ". Soy ionic-bot y estoy para ayudarte. Puedes escribirme al privado 'comandos' para ver la lista de acciones disponibles. Podrás encontrar mucha ayuda para iniciar en este fabuloso mundo"
+    // );
   }
   if (chatMsg) {
     console.log(chatMsg);
